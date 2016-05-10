@@ -331,7 +331,8 @@ public:
       break;
     }
 
-    if (getTriple().isOSFreeBSD()) {
+    if (getTriple().isOSFreeBSD()
+        || getTriple().isMusl()) {
       LongDoubleWidth = LongDoubleAlign = 64;
       LongDoubleFormat = &llvm::APFloat::IEEEdouble();
     }
